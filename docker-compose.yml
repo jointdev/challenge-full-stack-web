@@ -8,8 +8,8 @@ services:
     environment:
       POSTGRES_PASSWORD: godzilla
       POSTGRES_DB: challenge
-    volumes:  
-      - ./.docker/dbdata:/var/lib/postgresql/data
+    #volumes:  
+    #  - ./.docker/dbdata:/var/lib/postgresql/data
   api:
     restart: always
     build: ./challenge-api
@@ -22,8 +22,8 @@ services:
   ui:
     restart: always
     build: ./challenge-ui
-    volumes: 
-      - ./challenge-ui:/app
+    #volumes: 
+    #  - ./challenge-ui:/app
     depends_on:
       - api
     ports:
